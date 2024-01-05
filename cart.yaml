@@ -11,4 +11,4 @@
    -  name: check roboshop user exist or not 
       ansible.builtin.command: id roboshop
       register: out 
-      ignore_errors:ture
+      ignore_errors: ture
