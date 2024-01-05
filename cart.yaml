@@ -1,0 +1,14 @@
+-  name: Install cart component
+   hosts: cart
+   become: yes
+   tasks:
+   -  name: Setup NodeJS repos
+      ansible.builtin.shell: "curl -sL https://rpm.nodesource.com/setup_lts.x | bash"
+   -  name: Install NodeJS
+      ansible.builtin.yum:
+        name: nodejs
+        state: Installed
+   -  name: check roboshop user exist or not 
+      ansible.builtin.command: id roboshop
+      register: out 
+      ignore_errors:ture
